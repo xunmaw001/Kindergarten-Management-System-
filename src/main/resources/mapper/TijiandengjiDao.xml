@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TijiandengjiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TijiandengjiEntity" id="tijiandengjiMap">
+        <result property="tijianmingcheng" column="tijianmingcheng"/>
+        <result property="jiazhangzhanghao" column="jiazhangzhanghao"/>
+        <result property="tijiantupian" column="tijiantupian"/>
+        <result property="haizixingming" column="haizixingming"/>
+        <result property="shengao" column="shengao"/>
+        <result property="tizhong" column="tizhong"/>
+        <result property="shili" column="shili"/>
+        <result property="xinlv" column="xinlv"/>
+        <result property="tijianxiangqing" column="tijianxiangqing"/>
+        <result property="tijianpingjia" column="tijianpingjia"/>
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="tijianshijian" column="tijianshijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TijiandengjiVO" >
+		SELECT * FROM tijiandengji  tijiandengji         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TijiandengjiVO" >
+		SELECT  tijiandengji.* FROM tijiandengji  tijiandengji
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TijiandengjiView" >
+
+		SELECT  tijiandengji.* FROM tijiandengji  tijiandengji 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TijiandengjiView" >
+		SELECT * FROM tijiandengji  tijiandengji <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+	
+</mapper>
